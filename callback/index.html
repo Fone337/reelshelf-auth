@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Connecting… · ReelHouse</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;max-width:640px;margin:10vh auto;padding:0 20px;color:#111}</style>
+<script>
+// Google sends the sign-in result here. Pass on only what ReelHouse Connect needs: the "iss" and "scope"
+// web addresses Google also adds make the Connect server's firewall reject the request.
+(function () {
+	var from = new URLSearchParams(location.search), to = new URLSearchParams();
+	['code', 'state', 'error'].forEach(function (k) { if (from.has(k)) { to.set(k, from.get(k)); } });
+	location.replace('https://reelhouse.commandz.co.uk/oauth/callback?' + to.toString());
+})();
+</script>
+</head>
+<body>
+<p>Taking you back to ReelHouse…</p>
+<noscript><p>This step needs JavaScript. Turn it on and press Connect YouTube again.</p></noscript>
+</body>
+</html>
