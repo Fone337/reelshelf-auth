@@ -12,7 +12,7 @@
 (function () {
 	var from = new URLSearchParams(location.search), to = new URLSearchParams();
 	['code', 'state', 'error'].forEach(function (k) { if (from.has(k)) { to.set(k, from.get(k)); } });
-	location.replace('https://reelhouse.commandz.co.uk/oauth/callback?' + to.toString());
+	location.replace('https://connect.reelshelf.com/oauth/callback?' + to.toString());
 })();
 </script>
 </head>
